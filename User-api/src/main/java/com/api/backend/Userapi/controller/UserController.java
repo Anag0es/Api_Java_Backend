@@ -1,7 +1,10 @@
 package com.api.backend.Userapi.controller;
 
 import com.api.backend.Userapi.dto.UserDTO;
+import com.api.backend.Userapi.service.UserService;
 import jakarta.annotation.PostConstruct;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,46 +14,42 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/user")
+@RequiredArgsConstructor
 public class UserController {
-    public static List<UserDTO> usuarios = new ArrayList<UserDTO>();
-
-    @PostConstruct
-    public void initializeList(){
-        UserDTO userDTO = new UserDTO();
-        userDTO.setNome("Ana");
-        userDTO.setCpf("213942");
-        userDTO.setEmail("ana@test.com");
-        userDTO.setTelefone("129842-39392");
-        userDTO.setEndereco("Rua a");
-        userDTO.setDataCadastro(LocalDateTime.now());
-
-        usuarios.add(userDTO);
-    }
+    private final UserService userService;
 
     @GetMapping
     public List<UserDTO> getUsers(){
-        return usuarios;
+        return userService.getAll();
     }
 
-    @GetMapping("/{cpf}")
-    public UserDTO getUsersFiltro(@PathVariable String cpf){
-        return usuarios.stream()
-                .filter(userDTO -> userDTO.getCpf().equals(cpf))
-                .findFirst()
-                .orElseThrow(() -> new RuntimeException("user not found."));
+    @GetMapping("/{id}")
+    public UserDTO findById(@PathVariable Long id){
+        return userService.findById(id);
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public UserDTO inserir(@RequestBody UserDTO userDTO){
-        userDTO.setDataCadastro(LocalDateTime.now());
-        usuarios.add(userDTO);
-        return userDTO;
+    public UserDTO newUser(@RequestBody @Valid UserDTO userDTO){
+        return userService.save(userDTO);
     }
 
-    @DeleteMapping("/{cpf}")
-    public boolean remover(@PathVariable String cpf){
-        return usuarios.removeIf(userDTO -> userDTO.getCpf().equals(cpf));
+    @GetMapping("/{cpf}/cpf")
+    public UserDTO findByCpf(@PathVariable String cpf,
+                             @RequestParam(name = "key", required = true)String key){
+        return userService.findByCpf(cpf, key);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable Long id){
+        userService.delete(id);
+    }
+
+    @GetMapping("/search")
+    public List<UserDTO> queryByName(
+            @RequestParam(name = "nome", required = true)String nome){
+        return userService.queryByName(nome);
     }
 
 }
