@@ -1,5 +1,6 @@
 package com.api.backend.productapi.model;
 
+import com.api.backend.productapi.dto.ProductDTO;
 import jakarta.persistence.*;
 import jdk.jfr.Category;
 import lombok.AllArgsConstructor;
