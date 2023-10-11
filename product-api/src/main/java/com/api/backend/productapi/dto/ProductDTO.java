@@ -25,7 +25,7 @@ public class ProductDTO {
     @NotNull
     private CategoryDTO category;
 
-    public static ProductDTO(Product product){
+    public static ProductDTO convert(Product product){
         ProductDTO productDTO = new ProductDTO();
         productDTO.setNome(product.getNome());
         productDTO.setPreco(product.getPreco());
