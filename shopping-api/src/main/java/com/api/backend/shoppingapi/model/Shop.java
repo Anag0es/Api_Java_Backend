@@ -1,5 +1,6 @@
 package com.api.backend.shoppingapi.model;
 
+import com.api.backend.shoppingapi.dto.ShopDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.stream.Collectors;
 
 @Getter
@@ -36,7 +38,7 @@ public class Shop {
         shop.setItems(shopDTO
                 .getItems().stream()
                 .map(Item::convert)
-                .collect(Collectors.toList());
+                .collect(Collectors.toList()));
         return shop;
     }
 }

@@ -1,5 +1,6 @@
 package com.api.backend.shoppingapi.model;
 
+import com.api.backend.shoppingapi.dto.ItemDTO;
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
