@@ -12,15 +12,18 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
+// classe que representa um usuario
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 public class User {
+    // Anota o campo id como uma chave primária gerada automaticamente pelo banco de dados
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    // declara os campos que o usuario tem
     private String nome;
     private String cpf;
     private String endereco;
@@ -28,6 +31,7 @@ public class User {
     private String telefone;
     private LocalDateTime dataCadastro;
 
+    // metodo estatico para converter um objeto UserDTO em um objeto User
     public static User convert(UserDTO userDTO){
         User user = new User();
         user.setNome(userDTO.getNome());
