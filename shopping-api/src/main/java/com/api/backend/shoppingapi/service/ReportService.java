@@ -4,6 +4,7 @@ import com.api.backend.shoppingapi.dto.ShopDTO;
 import com.api.backend.shoppingapi.dto.ShopReportDTO;
 import com.api.backend.shoppingapi.model.Shop;
 import com.api.backend.shoppingapi.repository.ReportRepository;
+import com.api.backend.shoppingapi.repository.ShopRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +16,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class ReportService {
 
-    private final ReportRepository reportRepository;
+    private final ShopRepository reportRepository;
 
     public List<ShopDTO> getShopsByFilter(
             LocalDate dataInicio,
