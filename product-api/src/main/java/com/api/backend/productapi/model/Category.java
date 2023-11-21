@@ -10,6 +10,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+// classe que representa uma categoria
 @Getter
 @Setter
 @NoArgsConstructor
@@ -17,6 +18,7 @@ import lombok.Setter;
 @Entity(name = "category")
 public class Category {
 
+    // atributos da categoria
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;

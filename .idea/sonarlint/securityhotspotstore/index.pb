@@ -83,3 +83,7 @@ c
 Q.idea/sonarlint/securityhotspotstore/3/a/3abb6204762304f36c0e5271ef5bc81672e8c475,f\f\ff20d030d5915710e25db63055ff5cdfee204628
 w
 G.idea/sonarlint/issuestore/3/a/3abb6204762304f36c0e5271ef5bc81672e8c475,3\a\3abfe538400eb35c42909bdd4723ae4353db3f79
+D
+product-api/mvnw.cmd,6\1\610c6a7fd18c26eb1e47cdb88b4cf23eef660ebd
+†
+Vproduct-api/src/main/java/com/api/backend/productapi/repository/ProductRepository.java,6\1\61fe217e5ef50c3136be50adfd09ab51cd2ffb0e

@@ -16,3 +16,4 @@ public interface UserRepository extends JpaRepository<User, Long> {
     // Define um método para buscar uma lista de usuários pelo nome
     List<User> queryByNomeLike(String name);
 }
+

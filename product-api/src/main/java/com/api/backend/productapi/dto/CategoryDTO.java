@@ -17,10 +17,12 @@ public class CategoryDTO {
     private long id;
     private String nome;
 
+    // metodo que converte categoria em um dto
     public static CategoryDTO convert(Category category){
         CategoryDTO categoryDTO = new CategoryDTO();
         categoryDTO.setId(category.getId());
         categoryDTO.setNome(category.getNome());
+        // retorna o objeto categoryDTO
         return categoryDTO;
     }
 }

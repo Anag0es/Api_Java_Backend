@@ -6,6 +6,7 @@ import com.api.backend.productapi.model.Product;
 
 public class DTOConverter {
 
+    // metodo que converte categoria em um dto
     public static CategoryDTO convert(Category category){
         CategoryDTO categoryDTO = new CategoryDTO();
         categoryDTO.setNome(category.getNome());
@@ -13,6 +14,8 @@ public class DTOConverter {
         return categoryDTO;
     }
 
+
+    // metodo que converte produto em um dto
     public static ProductDTO convert(Product product){
         ProductDTO productDTO = new ProductDTO();
         productDTO.setNome(productDTO.getNome());
