@@ -1,10 +1,4 @@
 
-m	java:S117,"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆÔÄû8›åüÒ´1
-o
-java:S6204"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8´á®ò¶1
-o
-java:S6204 "RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8½á®ò¶1
-o
-java:S6204)"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8Àá®ò¶1
+m	java:S1171"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆÔÄû8›åüÒ´1
 [
-java:S16127">Replace this lambda with method reference 'ItemDTO::getPrice'.(©Âå¬8Öá®ò¶1
+java:S1612=">Replace this lambda with method reference 'ItemDTO::getPrice'.(©Âå¬8Öá®ò¶1
