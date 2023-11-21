@@ -5,6 +5,7 @@ import com.api.backend.shoppingapi.model.Shop;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
+import org.springframework.context.annotation.Primary;
 
 import java.math.BigInteger;
 import java.time.LocalDate;
@@ -43,6 +44,8 @@ public class ReportRepositoryImpl implements ReportRepository {
         }
         return query.getResultList();
     }
+
+
 
     @Override
     public ShopReportDTO getReportByDate(LocalDate dataInicio,

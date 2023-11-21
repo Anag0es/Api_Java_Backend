@@ -27,16 +27,4 @@ public class Product {
     @JoinColumn(name = "category_id")
     private Category category;
 
-    public static Product convert(ProductDTO productDTO){
-        Product product = new Product();
-        product.setNome(productDTO.getNome());
-        product.setPreco(productDTO.getPreco());
-        product.setDescricao(productDTO.getDescricao());
-        product.setProductIdentifier(productDTO.getProductIdentifier());
-        if(productDTO.getCategoryDTO()) != null){
-            product.setCategory(
-                Category.convert(productDTO.getCategoryDTO()));
-        }
-        return product;
-    }
 }

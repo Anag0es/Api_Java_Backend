@@ -72,7 +72,7 @@ public class UserController {
         return userService.editUser(id, userDTO);
     }
 
-    // endpoint que retorna uma pagina de usuarios de acordo com as informacoes de paginacao recebidas
+    // endpoint que retorna uma pagina de usuarios de acordo com as informacoes de paginac
     @GetMapping("/pageable")
     public Page<UserDTO> getUserPage(Pageable page){
         return userService.getAllPage(page);

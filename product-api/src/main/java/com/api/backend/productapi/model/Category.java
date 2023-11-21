@@ -22,10 +22,4 @@ public class Category {
     private long id;
     private String nome;
 
-    public static Category convert(CategoryDTO categoryDTO){
-        Category category = new Category();
-        category.setNome(categoryDTO.getNome());
-        category.setId(categoryDTO.getId());
-        return category;
-    }
 }
