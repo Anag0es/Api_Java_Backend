@@ -14,15 +14,10 @@ import lombok.Setter;
 @AllArgsConstructor
 public class ItemDTO {
 
+    // atributos do item
     @NotBlank
     private String productIdentifier;
     @NotNull
     private Float price;
 
-    public static ItemDTO convert(Item item){
-        ItemDTO itemDTO = new ItemDTO();
-        itemDTO.setPrice(item.getPrice());
-        itemDTO.setProductIdentifier(item.getProductidentifier());
-        return itemDTO;
-    }
 }

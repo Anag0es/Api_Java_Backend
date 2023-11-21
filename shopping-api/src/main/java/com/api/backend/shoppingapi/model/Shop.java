@@ -18,6 +18,7 @@ import java.util.stream.Collectors;
 @Entity(name = "shop")
 public class Shop {
 
+    // campos que o shop tem
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -30,6 +31,7 @@ public class Shop {
     joinColumns = @JoinColumn(name = "shop_id"))
     private List<Item> items;
 
+    // metodo que converte um dto em um shop
     public static Shop convert(ShopDTO shopDTO){
         Shop shop = new Shop();
         shop.setUserIdentifier(shopDTO.getUserIdentifier());

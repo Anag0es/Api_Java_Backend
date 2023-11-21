@@ -7,20 +7,22 @@ import java.util.stream.Collectors;
 
 public class DTOConverter {
 
-    public static ItemDTO converter(Item item){
+    // metodo que retorna um item em dto
+    public static ItemDTO convert(Item item){
         ItemDTO itemDTO = new ItemDTO();
         itemDTO.setPrice(item.getPrice());
         itemDTO.setProductIdentifier(item.getProductidentifier());
         return itemDTO;
     }
 
-    public static ShopDTO converter(Shop shop){
+    // metodo que retorna um shop em dto
+    public static ShopDTO convert(Shop shop){
         ShopDTO shopDTO = new ShopDTO();
         shopDTO.setTotal(shop.getTotal());
         shopDTO.setDate(shop.getDate());
         shopDTO.setUserIdentifier(shop.getUserIdentifier());
         shopDTO.setItems(shop.getItems()
-                .stream().map(DTOConverter::converter)
+                .stream().map(DTOConverter::convert)
                 .collect(Collectors.toList()));
         return shopDTO;
     }

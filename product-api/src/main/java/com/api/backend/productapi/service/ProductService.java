@@ -49,7 +49,7 @@ public class ProductService {
     // define um metodo para salvar um novo produto
     public ProductDTO save(ProductDTO productDTO){
         Product product = productRepository.save(Product.convert(productDTO));
-        return ProductDTO.convert(product);
+        return DTOConverter.convert(product);
     }
 
     // define um metodo para deletar um produto a partir do seu id

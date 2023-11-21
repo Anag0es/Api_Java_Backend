@@ -11,6 +11,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class ShopReportDTO {
 
+    // atributos para estatistica da compra
     private Integer count;
     private Double total;
     private Double mean;

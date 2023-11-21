@@ -16,6 +16,8 @@ public class ReportRepositoryImpl implements ReportRepository {
     @PersistenceContext
     private EntityManager entityManager;
 
+
+    // implementacao do filtro das compras para o retorno de lista
     @Override
     public List<Shop> getShopByFilters(LocalDate dataInicio,
                                        LocalDate dataFim, Float valorMinimo) {
@@ -47,6 +49,7 @@ public class ReportRepositoryImpl implements ReportRepository {
 
 
 
+    // implementacao do filtro da data para um retorno dto
     @Override
     public ShopReportDTO getReportByDate(LocalDate dataInicio,
                                          LocalDate dataFim) {

@@ -1,5 +1,6 @@
 package com.api.backend.shoppingapi.service;
 
+import com.api.backend.shoppingapi.dto.DTOConverter;
 import com.api.backend.shoppingapi.dto.ShopDTO;
 import com.api.backend.shoppingapi.model.Shop;
 import com.api.backend.shoppingapi.repository.ShopRepository;
@@ -17,38 +18,43 @@ public class ShopService {
 
     private final ShopRepository shopRepository;
 
+    // metodo para retornar todas as compras
     public List<ShopDTO> getAll(){
         List<Shop> shops = shopRepository.findAll();
         return shops.stream()
-                .map(ShopDTO::convert)
+                .map(DTOConverter::convert)
                 .collect(Collectors.toList());
     }
 
+    // metodo para retornar uma lista de compras por um determinado usuario
     public List<ShopDTO> getByUser(String userIdentifier){
         List<Shop> shops = shopRepository
                 .findAllByUserIdentifier(userIdentifier);
         return shops.stream()
-                .map(ShopDTO::convert)
+                .map(DTOConverter::convert)
                 .collect(Collectors.toList());
     }
 
+    // metodo para retornar uma lista de compras pela data especificada
     public List<ShopDTO> getByDate(ShopDTO shopDTO){
         List<Shop> shops = shopRepository.findAllByDateGreaterThan(
                 shopDTO.getDate()
         );
         return shops.stream()
-                .map(ShopDTO::convert)
+                .map(DTOConverter::convert)
                 .collect(Collectors.toList());
     }
 
+    // metodo para retornar uma compra a partir de um id
     public ShopDTO findById(long ProductId){
         Optional<Shop> shop = shopRepository.findById(ProductId);
         if (shop.isPresent()){
-            return ShopDTO.convert(shop.get());
+            return DTOConverter.convert(shop.get());
         }
         return null;
     }
 
+    // metodo para salvar uma compra
     public ShopDTO save(ShopDTO shopDTO){
         shopDTO.setTotal(shopDTO.getItems()
                 .stream()
@@ -59,6 +65,6 @@ public class ShopService {
         shop.setDate(LocalDateTime.now());
 
         shop = shopRepository.save(shop);
-        return ShopDTO.convert(shop);
+        return DTOConverter.convert(shop);
     }
 }

@@ -14,9 +14,11 @@ import lombok.Setter;
 @Embeddable
 public class Item {
 
+    // declara os campos que o item tem
     private String productidentifier;
     private Float price;
 
+    // metodo que converte um dto para o item
     public static Item convert(ItemDTO itemDTO) {
         Item item = new Item();
         item.setProductidentifier(

@@ -17,6 +17,7 @@ import java.util.List;
 @AllArgsConstructor
 public class ShopDTO {
 
+    // atributos do shop
     @NotBlank
     private String userIdentifier;
     @NotNull
@@ -26,11 +27,4 @@ public class ShopDTO {
     @NotNull
     private List<ItemDTO> items;
 
-    public static ShopDTO convert(Shop shop) {
-        ShopDTO shopDTO = new ShopDTO();
-        shopDTO.setUserIdentifier(shop.getUserIdentifier());
-        shopDTO.setTotal(shopDTO.getTotal());
-        shopDTO.setDate(shopDTO.getDate());
-        return shopDTO;
-    }
 }
