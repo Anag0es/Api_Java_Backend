@@ -1,5 +1,6 @@
 package com.api.backend.Userapi.service;
 
+import com.api.backend.Userapi.dto.DTOConverter;
 import com.api.backend.Userapi.dto.UserDTO;
 import com.api.backend.Userapi.model.User;
 import com.api.backend.Userapi.repository.UserRepository;
@@ -21,21 +22,21 @@ public class UserService {
 // Define um metodo para retornar uma lista de todos os usuarios convertidos em UserDTO
     public List<UserDTO> getAll(){
         List<User> usuarios = userRepository.findAll();
-        return usuarios.stream().map(UserDTO::convert).collect(Collectors.toList());
+        return usuarios.stream().map(DTOConverter::convert).collect(Collectors.toList());
     }
 
     // Define um metodo para retornar um usuario específico pelo id convertido em UserDTO
     public UserDTO findById(long userId){
         User usuario = userRepository.findById(userId)
                 .orElseThrow(() -> new RuntimeException("user not found."));
-        return UserDTO.convert(usuario);
+        return DTOConverter.convert(usuario);
     }
 
     // Define um metodo para salvar um novo usuario no banco de dados a partir de um UserDTO
     public UserDTO save(UserDTO userDTO){
         userDTO.setDataCadastro(LocalDateTime.now());
         User user = userRepository.save(User.convert(userDTO));
-        return UserDTO.convert(user);
+        return DTOConverter.convert(user);
     }
 
 // Define um metodo para deletar um usuario a partir do seu id
@@ -44,14 +45,14 @@ public class UserService {
                 .findById(userId).orElseThrow(() ->
                         new RuntimeException());
         userRepository.delete(user);
-        return UserDTO.convert(user);
+        return DTOConverter.convert(user);
     }
 
 // Define um metodo para retornar um usuario a partir do seu cpf
     public UserDTO findByCpf(String cpf, String key){
         User user = userRepository.findByCpf(cpf);
         if(user != null){
-            return UserDTO.convert(user);
+            return DTOConverter.convert(user);
         }
         return null;
     }
@@ -61,7 +62,7 @@ public class UserService {
         List<User> usuarios = userRepository.queryByNomeLike(name);
         return usuarios
                 .stream()
-                .map(UserDTO::convert)
+                .map(DTOConverter::convert)
                 .collect(Collectors.toList());
     }
 
@@ -85,13 +86,13 @@ public class UserService {
         }
 
         user = userRepository.save(user);
-        return UserDTO.convert(user);
+        return DTOConverter.convert(user);
 
     }
 
 // Define um metodo para retornar uma pagina de um usuario convertido em dto
     public Page<UserDTO> getAllPage(Pageable page){
         Page<User> users = userRepository.findAll(page);
-        return users.map(UserDTO::convert);
+        return users.map(DTOConverter::convert);
     }
 }

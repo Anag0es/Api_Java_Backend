@@ -1,11 +1,7 @@
 
-t
-java:S6204"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(•Εφ»ωÿÿÿÿ8ΫΨ© Ώ1
 _
-java:S1612,"BReplace this lambda with method reference 'RuntimeException::new'.(υτον8ς§ή±1
+java:S1612-"BReplace this lambda with method reference 'RuntimeException::new'.(υτον8ς§ή±1
 G
-java:S11723"*Remove this unused method parameter "key".(¤—»8†εΒή±1
-o
-java:S6204A"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨Ή8–υ¬ Ώ1
+java:S11724"*Remove this unused method parameter "key".(¤—»8†εΒή±1
 _
-java:S1612G"BReplace this lambda with method reference 'RuntimeException::new'.(•ΞΆ·8φ§ή±1
+java:S1612H"BReplace this lambda with method reference 'RuntimeException::new'.(•ΞΆ·8φ§ή±1

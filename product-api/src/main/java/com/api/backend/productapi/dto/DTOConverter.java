@@ -6,20 +6,20 @@ import com.api.backend.productapi.model.Product;
 
 public class DTOConverter {
 
-    public static CategoryDTO converter(Category category){
+    public static CategoryDTO convert(Category category){
         CategoryDTO categoryDTO = new CategoryDTO();
         categoryDTO.setNome(category.getNome());
         categoryDTO.setId(category.getId());
         return categoryDTO;
     }
 
-    public static ProductDTO converter(Product product){
+    public static ProductDTO convert(Product product){
         ProductDTO productDTO = new ProductDTO();
         productDTO.setNome(productDTO.getNome());
         productDTO.setPreco(product.getPreco());
         if(product.getCategory() != null){
             productDTO.setCategory(
-                    DTOConverter.converter((Category) product.getCategory()));
+                    DTOConverter.convert((Category) product.getCategory()));
         }
         return productDTO;
     }

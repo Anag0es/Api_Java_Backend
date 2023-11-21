@@ -34,5 +34,7 @@ public class UserDTO {
     private String telefone;
     // atributo para armazenar a data de cadastro do usuario
     private LocalDateTime dataCadastro;
+    private String key;
+
 
 }
