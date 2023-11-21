@@ -25,15 +25,4 @@ public class ProductDTO {
     @NotNull
     private CategoryDTO category;
 
-    public static ProductDTO convert(Product product){
-        ProductDTO productDTO = new ProductDTO();
-        productDTO.setNome(product.getNome());
-        productDTO.setPreco(product.getPreco());
-        productDTO.setProductIdentifier(product.getProductIdentifier());
-        productDTO.setDescricao(product.getDescricao());
-        if(product.getCategory() != null){
-            productDTO.setCategory(CategoryDTO.convert(product.getCategory()));
-        }
-        return productDTO;
-    }
 }

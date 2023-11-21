@@ -35,15 +35,4 @@ public class UserDTO {
     // atributo para armazenar a data de cadastro do usuario
     private LocalDateTime dataCadastro;
 
-    // metodo que converte um objeto da classe User em um objeto da classe UserDTO
-    public static UserDTO convert(User user){
-        UserDTO userDTO = new UserDTO();
-        userDTO.setNome(user.getNome());
-        userDTO.setCpf(user.getCpf());
-        userDTO.setEmail(user.getEmail());
-        userDTO.setEndereco(user.getEndereco());
-        userDTO.setTelefone(user.getTelefone());
-        userDTO.setDataCadastro(user.getDataCadastro());
-        return userDTO;
-    }
 }

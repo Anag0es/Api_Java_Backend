@@ -27,3 +27,9 @@ D
 shopping-api/pom.xml,6\1\6114f3ab4a7023163c0a1e2f512f22b16afda198
 ‹
 [shopping-api/src/main/java/com/api/backend/shoppingapi/repository/ReportRepositoryImpl.java,f\0\f04a22ad8c31d6f452a944a96f980429ef7528b1
+G
+shopping-client/pom.xml,c\0\c098daa3afd2f46b53884f534fab8b7936251989
+o
+?User-api/src/main/java/com/api/backend/Userapi/dto/UserDTO.java,6\3\63b92ed881a2a5bec5d7843d619ae0017ae10646
+t
+DUser-api/src/main/java/com/api/backend/Userapi/dto/DTOConverter.java,5\7\57b14d8d4e1c04ef61a65ad3112d780a480c72c5
