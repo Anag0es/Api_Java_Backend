@@ -107,3 +107,5 @@ Ushopping-api/src/main/java/com/api/backend/shoppingapi/repository/ShopRepositor
 Qshopping-api/src/main/java/com/api/backend/shoppingapi/service/ReportService.java,2\f\2ffd4b3b1f772e8d4a1c8c532b37d0199160e976
 
 Oshopping-api/src/main/java/com/api/backend/shoppingapi/service/ShopService.java,7\8\78d7116961c804e94cacd334899f21e4715af9a8
+
+Oproduct-api/src/main/java/com/api/backend/productapi/ProductApiApplication.java,a\4\a4568658eee28e88c32fab7b5a08c29f2e98fa8e
