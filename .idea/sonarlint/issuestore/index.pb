@@ -33,3 +33,13 @@ o
 ?User-api/src/main/java/com/api/backend/Userapi/dto/UserDTO.java,6\3\63b92ed881a2a5bec5d7843d619ae0017ae10646
 t
 DUser-api/src/main/java/com/api/backend/Userapi/dto/DTOConverter.java,5\7\57b14d8d4e1c04ef61a65ad3112d780a480c72c5
+|
+Lshopping-api/src/main/java/com/api/backend/shoppingapi/dto/DTOConverter.java,b\1\b19e2b19453babad25028240fcc817c219361900
+n
+>User-api/src/main/java/com/api/backend/Userapi/model/User.java,2\e\2ec30baabeb38c09f6142148d37974802de92f1b
+}
+MUser-api/src/main/java/com/api/backend/Userapi/repository/UserRepository.java,5\f\5fa6965f6a7fc9460288cf8b3dc391e25c78a4ca
+v
+FUser-api/src/main/java/com/api/backend/Userapi/UserApiApplication.java,5\b\5bc29413b675b79add45b210468a4936484ba869
+w
+GUser-api/src/main/java/com/api/backend/Userapi/service/UserService.java,4\e\4e3d804d812265a6ee57181d1e0f60fd61f7311d

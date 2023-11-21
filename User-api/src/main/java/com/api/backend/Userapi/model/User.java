@@ -31,16 +31,5 @@ public class User {
     private String telefone;
     private LocalDateTime dataCadastro;
 
-    // metodo estatico para converter um objeto UserDTO em um objeto User
-    public static User convert(UserDTO userDTO){
-        User user = new User();
-        user.setNome(userDTO.getNome());
-        user.setCpf(userDTO.getCpf());
-        user.setEmail(userDTO.getEmail());
-        user.setEndereco(userDTO.getEndereco());
-        user.setTelefone(userDTO.getTelefone());
-        user.setDataCadastro(userDTO.getDataCadastro());
-        return user;
-    }
 
 }
