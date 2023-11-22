@@ -5,6 +5,7 @@ import com.api.backend.shoppingapi.dto.ShopDTO;
 import com.api.backend.shoppingapi.model.Shop;
 import com.api.backend.shoppingapi.repository.ShopRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -16,7 +17,15 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class ShopService {
 
+    @Autowired
     private final ShopRepository shopRepository;
+
+    @Autowired
+    private ProductService productService;
+
+    @Autowired
+    private UserService userService;
+
 
     // metodo para retornar todas as compras
     public List<ShopDTO> getAll(){
@@ -56,12 +65,19 @@ public class ShopService {
 
     // metodo para salvar uma compra
     public ShopDTO save(ShopDTO shopDTO){
+        if(userService.getUserByCpf(shopDTO.getUserIdentifier()) == null){
+            return null;
+        }
+        if(!validateProducts(shopDTO.getItems())){
+            return null;
+        }
+
         shopDTO.setTotal(shopDTO.getItems()
                 .stream()
                 .map(x -> x.getPrice())
                 .reduce((float) 0, Float::sum));
 
-        Shop shop = new Shop();
+        Shop shop = Shop.convert(shopDTO);
         shop.setDate(LocalDateTime.now());
 
         shop = shopRepository.save(shop);
