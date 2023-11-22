@@ -1,6 +1,8 @@
 package com.api.backend.shoppingapi.service;
 
+import com.api.backend.productapi.dto.ProductDTO;
 import com.api.backend.shoppingapi.dto.DTOConverter;
+import com.api.backend.shoppingapi.dto.ItemDTO;
 import com.api.backend.shoppingapi.dto.ShopDTO;
 import com.api.backend.shoppingapi.model.Shop;
 import com.api.backend.shoppingapi.repository.ShopRepository;
@@ -82,5 +84,17 @@ public class ShopService {
 
         shop = shopRepository.save(shop);
         return DTOConverter.convert(shop);
+    }
+
+    private boolean validateProducts(List<ItemDTO> items){
+        for(ItemDTO item : items){
+            ProductDTO productDTO = productService.getProductByIdentifier(
+                    item.getProductIdentifier());
+            if(productDTO == null){
+                return false;
+            }
+            item.setPrice(productDTO.getPreco());
+        }
+        return true;
     }
 }

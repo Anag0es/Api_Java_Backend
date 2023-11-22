@@ -1,4 +1,10 @@
 
-m	java:S1171"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆÔÄû8›åüÒ´1
+m	java:S117<"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆÔÄû8ºñı¤¿1
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8¾ñı¤¿1
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8¾ñı¤¿1
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8¾ñı¤¿1
 [
-java:S1612=">Replace this lambda with method reference 'ItemDTO::getPrice'.(©Âå¬8Öá®ò¶1
+java:S1612O">Replace this lambda with method reference 'ItemDTO::getPrice'.(©Âå¬8Éñı¤¿1
