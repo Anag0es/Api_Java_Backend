@@ -1,4 +1,4 @@
-package com.api.backend.Userapi.Exception;
+package com.api.backend.shoppingapi.exception;
 
 public class UserNotFoundException extends RuntimeException{
 }
