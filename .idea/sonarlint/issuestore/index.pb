@@ -109,3 +109,7 @@ x
 Hshopping-api/src/main/java/com/api/backend/shoppingapi/dto/ErrorDTO.java,f\c\fce4eaa346139eed68c4759e4ca8efba62f535a3
 ‰
 YUser-api/src/main/java/com/api/backend/Userapi/exception/advice/UserControllerAdvice.java,c\4\c4c2379c49434a97a7dc3f268f29896e7f8da9dc
+’
+bproduct-api/src/main/java/com/api/backend/productapi/exception/advice/ProductControllerAdvice.java,6\1\61075cfc6377c03c7447abbe1f6077e7bea5f8a5
+C
+product-api/pom.xml,3\0\30f4b367c449543c6189d8b477662b6a255d6fd9

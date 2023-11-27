@@ -3,7 +3,10 @@ package com.api.backend.productapi.service;
 import com.api.backend.productapi.dto.DTOConverter;
 import com.api.backend.productapi.dto.ProductDTO;
 import com.api.backend.productapi.model.Product;
+import com.api.backend.productapi.repository.CategoryRepository;
 import com.api.backend.productapi.repository.ProductRepository;
+import com.api.backend.shoppingapi.exception.CategoryNotFoundException;
+import com.api.backend.shoppingapi.exception.ProductNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -19,6 +22,7 @@ import java.util.stream.Collectors;
 public class ProductService {
 
     private ProductRepository productRepository;
+    private CategoryRepository categoryRepository;
 
     // define um metodo para retonar todos os produtos em uma lista
     public List<ProductDTO> getAll(){
@@ -43,11 +47,16 @@ public class ProductService {
         if (product != null){
             return DTOConverter.convert(product);
         }
-        return null;
+        throw new ProductNotFoundException();
     }
 
     // define um metodo para salvar um novo produto
     public ProductDTO save(ProductDTO productDTO){
+        Boolean existsCategory = categoryRepository.existsById(productDTO
+                .getCategory().getId());
+        if (!existsCategory){
+            throw new CategoryNotFoundException();
+        }
         Product product = productRepository.save(Product.convert(productDTO));
         return DTOConverter.convert(product);
     }
@@ -58,7 +67,7 @@ public class ProductService {
         if (product.isPresent()){
             productRepository.delete(product.get());
         }
-        return null;
+        throw new ProductNotFoundException();
     }
 
     // define um metodo para editar um produto a partir do seu id
