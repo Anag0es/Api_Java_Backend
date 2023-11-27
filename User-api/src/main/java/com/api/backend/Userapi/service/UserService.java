@@ -4,6 +4,7 @@ import com.api.backend.Userapi.dto.DTOConverter;
 import com.api.backend.Userapi.dto.UserDTO;
 import com.api.backend.Userapi.model.User;
 import com.api.backend.Userapi.repository.UserRepository;
+import com.api.backend.shoppingapi.exception.UserNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -54,7 +55,7 @@ public class UserService {
         if(user != null){
             return DTOConverter.convert(user);
         }
-        return null;
+        throw new UserNotFoundException();
     }
 
 // Define um metodo para retornar o usuario a partir do seu nome convertido em uma lista dto
