@@ -104,8 +104,6 @@ _shopping-api/src/main/java/com/api/backend/shoppingapi/exception/CategoryNotFou
 ‹
 [shopping-api/src/main/java/com/api/backend/shoppingapi/exception/UserNotFoundException.java,d\7\d7defc2176f14e78d726fda6ab3ea75fbc3082d8
 x
-Hshopping-api/src/main/java/com/api/backend/shoppingapi/dto/ErrotDTO.java,c\5\c5d57bce593f7d17b1ba130c7762e62d466b71cd
-x
 Hshopping-api/src/main/java/com/api/backend/shoppingapi/dto/ErrorDTO.java,f\c\fce4eaa346139eed68c4759e4ca8efba62f535a3
 ‰
 YUser-api/src/main/java/com/api/backend/Userapi/exception/advice/UserControllerAdvice.java,c\4\c4c2379c49434a97a7dc3f268f29896e7f8da9dc

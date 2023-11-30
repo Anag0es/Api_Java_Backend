@@ -46,7 +46,7 @@ public class ProductControllerAdvice {
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ErrorDTO handleMethodArgumentNotValid(MethodArgumentNotValidException exception) {
         ErrorDTO errorDTO = new ErrorDTO();
-        errorDTO.setStatus(HttpStatus.BAD_REQUEST.value());
+        errorDTO.setStatus(String.valueOf(HttpStatus.BAD_REQUEST.value()));
         BindingResult bindingResult = exception.getBindingResult();
         List<FieldError> fieldErros = bindingResult.getFieldErrors();
         StringBuilder sb =
