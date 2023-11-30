@@ -1,5 +1,6 @@
 package com.api.backend.shoppingapi.service;
 
+import com.api.backend.Userapi.dto.UserDTO;
 import com.api.backend.productapi.dto.ProductDTO;
 import com.api.backend.shoppingapi.dto.DTOConverter;
 import com.api.backend.shoppingapi.dto.ItemDTO;
@@ -66,8 +67,10 @@ public class ShopService {
     }
 
     // metodo para salvar uma compra
-    public ShopDTO save(ShopDTO shopDTO){
-        if(userService.getUserByCpf(shopDTO.getUserIdentifier()) == null){
+    public ShopDTO save(ShopDTO shopDTO, String key){
+        UserDTO userDTO = userService.getUserByCpf(shopDTO.getUserIdentifier(), key);
+        validateProducts(shopDTO.getItems());
+        if(userService.getUserByCpf(shopDTO.getUserIdentifier(), key) == null){
             return null;
         }
         if(!validateProducts(shopDTO.getItems())){

@@ -44,7 +44,8 @@ public class ShopController {
     // POST - metodo que salva uma compra
     @PostMapping("/shopping")
     @ResponseStatus(HttpStatus.CREATED)
-    public ShopDTO newShop(@Valid @RequestBody ShopDTO shopDTO){
-        return service.save(shopDTO);
+    public ShopDTO newShop(@Valid @RequestBody ShopDTO shopDTO,
+                           @RequestHeader(name = "key", required = true) String key){
+        return service.save(shopDTO, key);
     }
 }
