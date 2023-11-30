@@ -1,6 +1,7 @@
 package com.api.backend.shoppingapi.service;
 
 import com.api.backend.Userapi.dto.UserDTO;
+import com.api.backend.shoppingapi.exception.UserNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
@@ -21,7 +22,7 @@ public class UserService {
 
             return user.block();
         } catch (Exception e){
-            throw new RuntimeException("User not found");
+            throw new UserNotFoundException();
         }
     }
 }
