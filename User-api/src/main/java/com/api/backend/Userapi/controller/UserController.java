@@ -46,9 +46,9 @@ public class UserController {
 
     //endpoint que retorna um usuario pelo seu CPF
     @GetMapping("/{cpf}/cpf")
-    public UserDTO findByCpf(@PathVariable String cpf,
+    public UserDTO findByCpfAndKey(@PathVariable String cpf,
                              @RequestParam(name = "key", required = true)String key){
-        return userService.findByCpf(cpf, key);
+        return userService.findByCpfAndKey(cpf, key);
     }
 
     // endpoint que remove um usuario pelo seu Id

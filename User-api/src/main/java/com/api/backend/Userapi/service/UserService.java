@@ -52,8 +52,8 @@ public class UserService {
     }
 
 // Define um metodo para retornar um usuario a partir do seu cpf
-    public UserDTO findByCpf(String cpf, String key){
-        User user = userRepository.findByCpf(cpf);
+    public UserDTO findByCpfAndKey(String cpf, String key){
+        User user = userRepository.findByCpfAndKey(cpf, key);
         if(user != null){
             return DTOConverter.convert(user);
         }

@@ -11,7 +11,7 @@ import java.util.List;
 public interface UserRepository extends JpaRepository<User, Long> {
 
     // Define um método para buscar um usuário pelo CPF
-    User findByCpf(String cpf);
+    User findByCpfAndKey(String cpf, String key);
 
     // Define um método para buscar uma lista de usuários pelo nome
     List<User> queryByNomeLike(String name);
