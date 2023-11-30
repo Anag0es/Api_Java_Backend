@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 // classe que implementa a logica de negocio relacionada ao usuario
@@ -35,6 +36,7 @@ public class UserService {
 
     // Define um metodo para salvar um novo usuario no banco de dados a partir de um UserDTO
     public UserDTO save(UserDTO userDTO){
+        userDTO.setKey(UUID.randomUUID().toString());
         userDTO.setDataCadastro(LocalDateTime.now());
         User user = userRepository.save(User.convert(userDTO));
         return DTOConverter.convert(user);
