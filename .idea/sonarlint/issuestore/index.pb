@@ -113,3 +113,7 @@ C
 product-api/pom.xml,3\0\30f4b367c449543c6189d8b477662b6a255d6fd9
 •
 eshopping-api/src/main/java/com/api/backend/shoppingapi/exception/advice/ShoppingControllerAdvice.java,e\0\e03c14d256052ad237fcbcb2ed220a01b82f8ef9
+@
+User-api/pom.xml,8\d\8d2f7d145af18a907afe2ccb21baf5f97f77c86e
+{
+KUser-api/src/test/java/com/api/backend/Userapi/service/UserServiceTest.java,2\7\27adbc6593a61c9ba3b7bd9c4d1ca81c388c6720
